@@ -847,24 +847,6 @@ def update_graph(option_slctd,option_slcted2):
     )
     x=int(option_slcted2)+4
     
-    #below is stacked bar chart code but is display in a wrong way
-    # dff2= spt.copy()
-    # dff2=dff2[(dff2["StorageUOM"] == "Pallet") &(dff2['WarehouseStorageCondition']=='AC')]
-    # dff2=dff2.iloc[:,[2,3,4,5,6,7,8,9,10,11,12]]
-    # years=list(dff2.ProductType.unique())
-    # print(dff2)
-    # trace1 = go.Bar(x=dff2['Pallet Quantity'], y=years, name='2021')
-    # trace2 = go.Bar(x=dff2['2022'], y=[years,dff2['2022']], name='2022')
-    # trace3 = go.Bar(x=dff2['2023'], y=years, name='2023')
-    # trace4 = go.Bar(x=dff2['2024'], y=years, name='2024')
-    # trace5 = go.Bar(x=dff2['2025'], y=years, name='2025')
-    # trace6 = go.Bar(x=dff2['2026'], y=years, name='2026')
-    # trace7 = go.Bar(x=dff2['2027'], y=years, name='2027')
-    # trace8 = go.Bar(x=dff2['2028'], y=years, name='2028')
-    # trace9 = go.Bar(x=dff2['2029'], y=years, name='2029')
-    # trace10 = go.Bar(x=dff2['2030'], y=years, name='2030')
-    # data = [trace1, trace2, trace3, trace4, trace5,trace6,trace7,trace8,trace9]
-    # layout = go.Layout( barmode='stack', xaxis=dict(autorange=True,automargin=True,tickvals=years),autosize=True)
     dff2= spt.copy()
     dff2=dff2[(dff2["StorageUOM"] == "Pallet") &(dff2['WarehouseStorageCondition']=='AC')]
     dff2=dff2.iloc[:,[2,3,4,5,6,7,8,9,10,11,12]]
@@ -881,7 +863,7 @@ def update_graph(option_slctd,option_slcted2):
 
 
 
-    layout = go.Layout(xaxis=dict(autorange=True,automargin=True))
+    layout = go.Layout(xaxis=dict(autorange=True,automargin=True,x="Year", y="PalletQuantity"))
     fig2= go.Figure(layout=layout)
     for column in dff2:
         if column!="index":
