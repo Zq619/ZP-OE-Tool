@@ -18,9 +18,9 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.express as px
 import sys
-# Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
-# filename = askopenfilename() # show an "Open" dialog box and return the path to the selected file
-filename='INT_Sample_OE.xlsx'
+Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
+filename = askopenfilename() # show an "Open" dialog box and return the path to the selected file
+# filename='INT_Sample_OE.xlsx'
 if "xlsx" in filename :
     #dfA no nned modify, just show the result 
     area=0
@@ -1039,7 +1039,7 @@ if "xlsx" in filename :
                             ],style={'display':'none'}),
                             html.Div([ 
                                     html.Div([     
-                                      html.Div(id="tableArea",style={'font-family': 'Arial','display': 'inline-block'}),
+                                      html.Div(id="tableArea",style={'font-family': 'Arial','min-width': '100%'}),
                                       
                             ],style={'font-family': 'Arial','display': 'flex','flex-direction': 'row','justify-content': 'space-evenly'}),
                               
@@ -1124,10 +1124,8 @@ if "xlsx" in filename :
             if storage == 'Pallet' :
                 if warehouse =='Aircon':
                     table= html.Div(id="tableAC",style={'font-family': 'Arial','display': 'inline-block'})
-                elif warehouse =='Cold Room':
-                    table= html.Div(id="tableCOP",style={'font-family': 'Arial','display': 'inline-block'}),
                 else :
-                    table= html.H3("No Such data found!")
+                    table= html.Div(id="tableCOP",style={'font-family': 'Arial','display': 'inline-block'}),
             elif storage == 'Bin' :
                 if warehouse =='Aircon':
                     table= html.Div(id="tableACB",style={'font-family': 'Arial','display': 'inline-block'}),     
@@ -1152,10 +1150,9 @@ if "xlsx" in filename :
             if storage == 'Pallet' :
                 if warehouse =='Aircon':
                     table= html.Div(id="tableAC2",style={'font-family': 'Arial','display': 'inline-block'})
-                elif warehouse =='Cold Room':
-                    table= html.Div(id="tableCOP2",style={'font-family': 'Arial','display': 'inline-block'}),
                 else :
-                    table= html.H3("No Such data found!")
+                    table= html.Div(id="tableCOP2",style={'font-family': 'Arial','display': 'inline-block'}),
+               
             elif storage == 'Bin' :
                 if warehouse =='Aircon':
                     table= html.Div(id="tableACB2",style={'font-family': 'Arial','display': 'inline-block'}),     
@@ -1179,10 +1176,8 @@ if "xlsx" in filename :
             if storage == 'Pallet' :
                 if warehouse =='Aircon':
                     table= html.Div(id="tableAC3",style={'font-family': 'Arial','display': 'inline-block'})
-                elif warehouse =='Cold Room':
-                    table= html.Div(id="tableCOP3",style={'font-family': 'Arial','display': 'inline-block'}),
                 else :
-                    table= html.H3("No Such data found!")
+                    table= html.Div(id="tableCOP3",style={'font-family': 'Arial','display': 'inline-block'}),
             elif storage == 'Bin' :
                 if warehouse =='Aircon':
                     table= html.Div(id="tableACB3",style={'font-family': 'Arial','display': 'inline-block'}),     
